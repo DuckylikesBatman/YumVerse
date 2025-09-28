@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'Dream-Avenue';
+  src: url('fonts/Dream-Avenue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Tokens used only in footer --- */
+:root{
+  --clr-light-muted: #6f6a64;  /* used by footer-contact links/text */
+  --clr-gold: #e0b84e;         /* hover color for icons/links */
+}
+
+
+/* Navbar */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(6px);
+}
+
+.logo { width: 150px; height: auto; display: block; cursor: pointer; }
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.nav-buttons {
+      font-family: 'Dream-Avenue', system-ui, sans-serif;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 2px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  transition: border-color .3s ease, color .3s ease;
+}
+
+.nav-buttons:hover,
+.nav-buttons:focus-visible {
+  border-bottom: 2px solid var(--accent);
+  outline: none;
+}
+
+
+/* Footer (base you already had) */
+.site-footer{
+  color: var(--ink);
+  background: #fafafa;
+  display: flex;
+  gap: 28px;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 28px 20px 40px;
+  border-top: 1px solid #eee;
+}
+
+/* Make columns behave nicely on wrap */
+.site-footer > .footer-col,
+.site-footer > .footer-contact{
+  flex: 1 1 260px;   /* grow, shrink, base width */
+  max-width: 360px;
+}
+
+/* Headings */
+.footer-col h2,
+.footer-contact h2{
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+/* Paragraphs */
+.footer-col h4{
+  margin: 6px 0;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-top: 20px;
+}
+
+/* Contact block */
+.footer-contact{
+  font-style: normal; /* override default <address> italics */
+}
+
+.footer-contact p { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+  margin: 0 0 0.75rem; 
+  color: var(--clr-light-muted);
+  font-size: 0.95rem;
+}
+
+.footer-contact svg{
+  flex: 0 0 auto;
+  opacity: .9;
+  fill: var(--clr-gold);
+}
+
+/* Contact links */
+.footer-contact a { 
+  color: var(--clr-light-muted); 
+  text-decoration: none; 
+  transition: color 0.3s ease;
+}
+.footer-contact a:hover { 
+  color: var(--clr-gold); 
+}
+
+/* Social */
+.social-links { 
+  display: flex; 
+  gap: 1rem; 
+  margin-top: 1rem; 
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a[aria-label="Instagram"]::before {
+  background: linear-gradient(45deg, 
+    #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-links a[aria-label="Facebook"]::before {
+  background: #1877f2;
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;                 /* icon stays legible over gradients */
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+.social-links a:hover::before { opacity: 1; }
+.social-links a:hover svg { transform: scale(1.06); }
+
+/* Instagram pulse animation (was referenced but missing) */
+@keyframes instagram-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.social-links a[aria-label="Instagram"]:hover {
+  animation: instagram-pulse 0.6s ease;
+}
+
+/* Small screens */
+@media (max-width: 640px){
+  .site-footer{
+    justify-content: center;
+    gap: 18px;
+  }
+}

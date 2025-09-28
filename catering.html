@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YumVerse — Catering</title>
+  <link rel="stylesheet" href="nav-footer.css" />
+  <link rel="stylesheet" href="catering.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav-bar">
+    <div class="logo-container">
+      <a href="main.html"><img class="logo" src="images/logo.png" alt="YumVerse logo"></a>
+    </div>
+    <div class="nav-links" role="navigation" aria-label="Primary">
+      <a href="main.html"><button class="nav-buttons">HOME</button></a>
+      <a href="menu.html"><button class="nav-buttons">MENU</button></a>
+      <a href="reservation.html"><button class="nav-buttons">RESERVATION</button></a>
+      <a href="catering.html"><button class="nav-buttons">CATERING</button></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="catering-header">
+    <img class="catering-bg" src="images/catering.png" alt="YumVerse catering spread with pizzas and sides">
+  </header>
+
+  <main>
+    <!-- GALLERY -->
+    <section class="collection" aria-label="Catering gallery">
+      <img class="catering-pic" src="images/catering-pic-10.png" alt="Buffet table with pizzas" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-3.png" alt="Assorted pizzas close-up" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-4.png" alt="Pizza slices being served" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-2.png" alt="Catering boxes neatly stacked" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-6.png" alt="Fresh toppings and salads" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-7.png" alt="Party setup with YumVerse catering" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-8.png" alt="Chef preparing pizza" loading="lazy" decoding="async">
+      <img class="catering-pic" src="images/catering-pic-11.png" alt="Family-style pizza service" loading="lazy" decoding="async">
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="explain">
+      <h1 class="explain-header">How it works</h1>
+      <p class="explain-p">
+        Catering for school events, office meetings, or birthdays — we’ll tailor a package to your needs.
+        Fill the form and our team will reach out to confirm details and finalize your menu.
+      </p>
+    </section>
+
+    <!-- FORM (ESSENTIALS ONLY) -->
+    <section class="catering-form">
+      <form class="form card" action="#" method="post" novalidate>
+        <!-- Event basics -->
+        <fieldset class="group">
+          <legend class="section-title">Event basics</legend>
+
+          <div class="container-cell three">
+            <div class="cell">
+              <label class="label" for="guests">Guests</label>
+              <select id="guests" name="guests" required>
+                <option value="" disabled selected>Select</option>
+                <option>1–5</option><option>5–8</option><option>8–10</option>
+                <option>10–15</option><option>15–20</option><option>20–30</option>
+                <option>30–50</option><option>50–100</option><option>100+</option>
+              </select>
+            </div>
+
+            <div class="cell">
+              <label class="label" for="eventType">Event type</label>
+              <select id="eventType" name="eventType" required>
+                <option value="" disabled selected>Select</option>
+                <option>Corporate</option><option>Birthday</option>
+                <option>Wedding</option><option>Graduation</option>
+                <option>Private party</option><option>Other</option>
+              </select>
+            </div>
+
+            <div class="cell">
+              <label class="label" for="serviceType">Service</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="" disabled selected>Select</option>
+                <option>Delivery (drop-off)</option>
+                <option>Pick-up at store</option>
+                <option>On-site catering (staffed)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="container-cell two">
+            <div class="cell">
+              <label class="label" for="date">Event date</label>
+              <input id="date" name="date" type="date" class="input-date" required>
+            </div>
+            <div class="cell">
+              <label class="label" for="startTime">Start time</label>
+              <input id="startTime" name="startTime" type="time" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Dietary (optional) -->
+        <fieldset class="group">
+          <legend class="section-title">Dietary (optional)</legend>
+          <div class="container-info">
+            <label class="checkbox"><input type="checkbox" name="veg"> Vegetarian</label>
+            <label class="checkbox"><input type="checkbox" name="vegan"> Vegan</label>
+            <label class="checkbox"><input type="checkbox" name="gf"> Gluten-free</label>
+            <label class="checkbox"><input type="checkbox" name="halal"> Halal</label>
+            <label class="checkbox"><input type="checkbox" name="df"> Dairy-free</label>
+          </div>
+          <div class="container-info">
+            <div class="field full">
+              <label class="label" for="allergies">Allergies / notes</label>
+              <textarea id="allergies" name="allergies" rows="3" class="input-area" placeholder="Any severe allergies or special requests?"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Contact -->
+        <fieldset class="group">
+          <legend class="section-title">Contact</legend>
+          <div class="container-cell two">
+            <div class="cell">
+              <label class="label" for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" class="input-txt" required>
+            </div>
+            <div class="cell">
+              <label class="label" for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" class="input-txt" required>
+            </div>
+          </div>
+          <div class="container-cell two">
+            <div class="cell">
+              <label class="label" for="email">Email</label>
+              <input id="email" name="email" type="email" class="input-txt" required>
+            </div>
+            <div class="cell">
+              <label class="label" for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" class="input-txt" placeholder="+961…" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="container-info">
+          <label class="checkbox">
+            <input type="checkbox" name="accept" required>
+            I agree to the Terms & Privacy.
+          </label>
+        </div>
+
+        <button type="submit" class="submit">Request catering quote</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-col">
+      <h2>Visit Us</h2>
+      <h4>131 Boulevard</h4>
+      <h4>Boston 2015</h4>
+      <h4>617-266-1300</h4>
+    </div>
+    <div class="footer-col">
+      <h2>Hours — Dining &amp; Takeout/Delivery</h2>
+      <h4>Mon – Thu: 11:30 – 9:00</h4>
+      <h4>Fri – Sat: 11:30 – 10:00</h4>
+      <h4>Sun: 12:00 – 8:00</h4>
+    </div>
+
+  <address class="footer-col footer-contact" aria-label="Contact information">
+    <h2>Contact Us</h2>
+
+    <p>
+      <!-- location icon -->
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M12 2C8.7 2 6 4.7 6 8c0 5 6 12 6 12s6-7 6-12c0-3.3-2.7-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5z"/>
+      </svg>
+      Corniche El Mazraa, Beirut
+    </p>
+
+    <p>
+      <!-- phone icon -->
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.1-.23c1.2.48 2.5.74 3.8.74a1 1 0 0 1 1 1V20a2 2 0 0 1-2 2C10.7 22 2 13.3 2 3a2 2 0 0 1 2-2h3.3a1 1 0 0 1 1 1c0 1.3.26 2.6.74 3.8a1 1 0 0 1-.23 1.1L6.6 10.8z"/>
+      </svg>
+      <a href="tel:+96103683127">+961 03 683 127</a>
+    </p>
+
+    <p>
+      <!-- mail icon -->
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
+      </svg>
+      <a href="mailto:artluxdesign@outlook.com">artluxdesign@outlook.com</a>
+    </p>
+
+    <div class="social-links" aria-label="Follow us">
+      <a href="https://www.instagram.com/artlux.murals" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 2.16c3.2 0 3.58.01 4.85.07
+                     3.25.15 4.77 1.69 4.92 4.92
+                     .06 1.26.07 1.64.07 4.85
+                     0 3.2-.01 3.58-.07 4.85
+                     -.15 3.23-1.66 4.77-4.92 4.92
+                     -1.26.06-1.64.07-4.85.07
+                     -3.2 0-3.58-.01-4.85-.07
+                     -3.26-.15-4.77-1.7-4.92-4.92
+                     -.06-1.26-.07-1.64-.07-4.85
+                     0-3.2.01-3.58.07-4.85
+                     .15-3.23 1.66-4.77 4.92-4.92
+                     1.26-.06 1.65-.07 4.85-.07z
+                     m0-2.16c-3.26 0-3.67.01-4.95.07
+                     -4.36.2-6.78 2.62-6.98 6.98
+                     -.06 1.28-.07 1.69-.07 4.95
+                     0 3.26.01 3.67.07 4.95
+                     .2 4.36 2.62 6.78 6.98 6.98
+                     1.28.06 1.69.07 4.95.07
+                     3.26 0 3.67-.01 4.95-.07
+                     4.35-.2 6.78-2.62 6.98-6.98
+                     .06-1.28.07-1.69.07-4.95
+                     0-3.26-.01-3.67-.07-4.95
+                     -.2-4.35-2.62-6.78-6.98-6.98
+                     -1.28-.06-1.69-.07-4.95-.07z
+                     m0 5.84c-3.4 0-6.16 2.76-6.16 6.16
+                     0 3.4 2.76 6.16 6.16 6.16
+                     3.4 0 6.16-2.76 6.16-6.16
+                     0-3.4-2.76-6.16-6.16-6.16
+                     z m0 10.16c-2.21 0-4-1.79-4-4
+                     s1.79-4 4-4 4 1.79 4 4
+                     -1.79 4-4 4z
+                     m6.41-11.84c-.8 0-1.44.64-1.44 1.44
+                     s.64 1.44 1.44 1.44 1.44-.64 1.44-1.44
+                     -.64-1.44-1.44-1.44z"/>
+          </svg>
+        </a>
+      <a href="https://www.facebook.com/artlux.murals" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22.68 0H1.32C.59 0 0 .59 0 1.32v21.36
+                     C0 23.41.59 24 1.32 24h11.5v-9.29H9.69v-3.62
+                     h3.13v-2.67c0-3.1 1.89-4.79 4.66-4.79
+                     1.32 0 2.46.1 2.8.14v3.24h-1.92
+                     c-1.5 0-1.79.72-1.79 1.76v2.31h3.59
+                     l-.47 3.62h-3.12V24h6.12
+                     c.73 0 1.32-.59 1.32-1.32V1.32
+                     C24 .59 23.41 0 22.68 0z"/>
+          </svg>
+        </a>
+    </div>
+  </address>
+  </footer>
+
+  <!-- tiny helper: set date to today, prevent past -->
+  <script>
+    (function(){
+      const d=new Date(),pad=n=>String(n).padStart(2,'0');
+      const today=`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+      const dateEl=document.getElementById('date');
+      if(dateEl){ dateEl.value=today; dateEl.min=today; }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+  .bar{
+    max-width:900px;margin:24px auto;
+    border:1px solid #ddd;
+    border-radius:12px;
+       display:grid;
+       grid-template-columns:repeat(3,1fr);
+       overflow:hidden;
+       font:16px system-ui;}
+         .cell{
+    padding:14px 16px;
+}
+  .cell+/* next cell */.cell{
+    border-left:1px solid #eee;}
+  .cell+/* next cell */.cell{
+    border-left:1px solid #eee;}
+ 
+  select,input[type=date]{width:100%;border:0;background:#fff;font-weight:700;font-size:20px;outline:none;}

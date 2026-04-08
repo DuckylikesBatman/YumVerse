@@ -1,140 +1,63 @@
 # 🍕 YumVerse — Restaurant Website
 
-A multi-page static restaurant website for **YumVerse**, a modern pizza kitchen based in Beirut. Built with vanilla HTML and CSS, no frameworks or build tools required.
+A static multi-page website for YumVerse, a modern pizza kitchen based in Beirut. Built with plain HTML & CSS — no frameworks, no build tools.
 
 ---
 
-## 📁 Project Structure
+## Pages
+
+| File | Description |
+|---|---|
+| `main.html` | Homepage — loyalty offer banner, corporate overview, annual stats, and links to all sections |
+| `menu.html` | Full menu organized by category (starters, pies, desserts, drinks) with prices and dietary tags |
+| `reservation.html` | Booking form with cascading location dropdowns (Country → State → City → Zip) and date/time pickers |
+| `catering.html` | Photo gallery, "How It Works" section, and a catering inquiry form |
+
+---
+
+## File Structure
 
 ```
-yumverse/
-│
-├── index (main.html)          # Homepage
-├── menu.html                  # Full menu page
-├── reservation.html           # Table reservation form
-├── catering.html              # Catering inquiry & gallery
-│
-├── main.css                   # Homepage styles
-├── menu.css                   # Menu page styles
-├── reservation.css            # Reservation form styles
-├── catering.css               # Catering page styles
-├── nav-footer.css             # Shared navbar & footer styles
-│
-├── trying.html / trying.css   # Prototype / sandbox file
-│
+├── main.html / main.css
+├── menu.html / menu.css
+├── reservation.html / reservation.css
+├── catering.html / catering.css
+├── nav-footer.css          # Shared navbar & footer (used by all pages)
+├── trying.html / trying.css  # Prototype/sandbox file
 ├── fonts/
-│   └── Dream-Avenue.ttf       # Custom brand font
-│
-└── images/
-    ├── logo.png
-    ├── pizza-offer.png
-    ├── menu-bg-2.png
-    ├── reservation-bg.png
-    ├── catering-bg.png
-    ├── catering.png
-    ├── catering-pic-*.png     # Catering gallery images
-    ├── pizza-icon.png
-    ├── order-icon.png
-    ├── stars-icon.png
-    ├── catering-icon.png
-    ├── house-icon.png
-    └── earth-icon.png
+│   └── Dream-Avenue.ttf    # Custom brand font
+└── images/                 # All site images and icons
 ```
 
 ---
 
-## 📄 Pages Overview
+## Design System
 
-### `main.html` — Homepage
-- Loyalty offer banner ("10th pizza on us")
-- Corporate overview with mission and highlights
-- Annual stats grid (sales, orders, rating, branches, countries)
-- Three feature sections linking to Menu, Reservation, and Catering
+The site uses CSS custom properties (variables) defined in `:root` for consistent theming:
 
-### `menu.html` — Menu
-- Full food and drink menu organized by category
-- Categories: Starters, Greens, Classic Pies, White Pies, Signatures, Grandma/Square, Calzone, Desserts, Drinks
-- Dietary legend: Vegetarian, Vegan, Gluten-Free, Spicy indicators
+- `--accent: rgb(231,193,193)` — soft pink for borders and underlines
+- `--accent-strong: #e07a7a` — stronger pink for buttons and highlights
+- `--ink: #323030` — primary text color
+- `--bg-hero: #f7f4ef` — warm off-white for hero sections
 
-### `reservation.html` — Reservations
-- Form: name, phone, email, guest count, date, time, location, special requests
-- Cascading location dropdowns (Country → State → City → Zip)
-- Prevents past date selection
-- Client-side form validation with a success alert on submit
-
-### `catering.html` — Catering
-- Hero banner image
-- Photo gallery with hover zoom effects
-- "How It Works" explanation
-- Catering inquiry form: event basics, dietary preferences, contact info
-- Date auto-set to today, past dates blocked
+**Font:** `Dream-Avenue` (custom TTF) with a system-ui fallback stack.
 
 ---
 
-## 🎨 Design System
+## Key Features
 
-| Token | Value | Usage |
-|---|---|---|
-| `--bg-hero` | `#f7f4ef` | Page hero backgrounds |
-| `--ink` | `#323030` | Primary text |
-| `--ink-soft` | `#5c5858` | Secondary/muted text |
-| `--accent` | `rgb(231,193,193)` | Borders, underlines |
-| `--accent-strong` | `#e07a7a` | Buttons, highlights |
-| `--border` | `#eee` / `#ece9e4` | Card and input borders |
-
-**Font:** `Dream-Avenue` (custom TTF) with system-ui fallback stack.
+- **Responsive** — flexbox and grid layouts adapt to mobile, tablet, and desktop
+- **Shared components** — navbar and footer are styled once in `nav-footer.css` and reused across all pages
+- **Reservation logic** — cascading dropdowns built in vanilla JS; past dates are blocked automatically
+- **Catering form** — date auto-set to today, dietary checkboxes, and contact fields
+- **Accessible markup** — semantic HTML with `aria-label`, `role`, and `alt` attributes throughout
 
 ---
 
-## 🧩 Shared Components (`nav-footer.css`)
 
-Both the navbar and footer are styled from a single shared stylesheet, keeping the look consistent across all pages.
+## Known Limitations
 
-**Navbar** — sticky, frosted-glass effect (`backdrop-filter: blur`), centered links, hover underline animation.
-
-**Footer** — three-column layout with visit info, hours, and a contact block. Includes Instagram and Facebook social icons with gradient hover effects.
-
----
-
-## 🚀 Getting Started
-
-No build step needed. Just open any HTML file in a browser:
-
-```bash
-# Option 1 — open directly
-open main.html
-
-# Option 2 — use a local dev server (recommended to avoid font path issues)
-npx serve .
-# or
-python3 -m http.server 8000
-```
-
-> **Note:** The custom font (`Dream-Avenue.ttf`) loads via a relative `fonts/` path. A local server prevents browser CORS restrictions on local font files.
-
----
-
-## ✅ Features
-
-- Fully responsive — mobile, tablet, and desktop layouts
-- CSS custom properties (design tokens) for easy theming
-- Accessible markup — semantic HTML, `aria-label`, `role` attributes
-- No JavaScript frameworks — plain JS only where needed
-- Smooth hover transitions on buttons, cards, and gallery images
-- Social media links with platform-accurate gradient icons
-
----
-
-## 🔧 Known Limitations / Future Improvements
-
-- Forms are front-end only — no backend or email integration yet
+- Forms are front-end only — no backend or email handling yet
 - Location data in the reservation form is hardcoded (USA and Germany only)
-- No mobile hamburger menu — nav collapses on small screens but isn't hidden
-- Images are not optimized (no WebP conversion or lazy-loading for all assets)
-- Could benefit from a shared HTML include system (e.g., a component for nav/footer) to avoid duplication across pages
-
----
-
-## 👤 Author
-
-Built as a web development project. Design language: warm, modern, food-forward.
+- Nav/footer HTML is duplicated across every page (no templating system)
+- No mobile hamburger menu

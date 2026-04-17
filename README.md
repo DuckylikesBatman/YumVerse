@@ -1,63 +1,42 @@
-# 🍕 YumVerse — Restaurant Website
+# Yumverse
 
-A static multi-page website for YumVerse, a modern pizza kitchen based in Beirut. Built with plain HTML & CSS — no frameworks, no build tools.
+Yumverse is a playful and engaging platform that allows users to collect, trade, and discover unique digital collectibles inspired by the world of food.
 
----
+## Features
+- **Collect**: Gather various food-themed items.
+- **Trade**: Swap collectibles with friends or other users.
+- **Discover**: Explore new items and trends in the Yumverse.
 
-## Pages
+## Installation
+To get started with Yumverse, follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/duckylikesbatman/yumverse.git
+   ```
+2. Navigate into the directory:
+   ```bash
+   cd yumverse
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-| File | Description |
-|---|---|
-| `main.html` | Homepage — loyalty offer banner, corporate overview, annual stats, and links to all sections |
-| `menu.html` | Full menu organized by category (starters, pies, desserts, drinks) with prices and dietary tags |
-| `reservation.html` | Booking form with cascading location dropdowns (Country → State → City → Zip) and date/time pickers |
-| `catering.html` | Photo gallery, "How It Works" section, and a catering inquiry form |
-
----
-
-## File Structure
-
+## Usage
+After installation, you can run the application using:
+```bash
+npm start
 ```
-├── main.html / main.css
-├── menu.html / menu.css
-├── reservation.html / reservation.css
-├── catering.html / catering.css
-├── nav-footer.css          # Shared navbar & footer (used by all pages)
-├── trying.html / trying.css  # Prototype/sandbox file
-├── fonts/
-│   └── Dream-Avenue.ttf    # Custom brand font
-└── images/                 # All site images and icons
-```
+Then, open your browser and navigate to `http://localhost:3000` to see your Yumverse in action.
 
----
+## Contributing
+We welcome contributions! If you have suggestions or improvements, feel free to submit a pull request.
 
-## Design System
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The site uses CSS custom properties (variables) defined in `:root` for consistent theming:
+## Author
+DuckylikesBatman
 
-- `--accent: rgb(231,193,193)` — soft pink for borders and underlines
-- `--accent-strong: #e07a7a` — stronger pink for buttons and highlights
-- `--ink: #323030` — primary text color
-- `--bg-hero: #f7f4ef` — warm off-white for hero sections
-
-**Font:** `Dream-Avenue` (custom TTF) with a system-ui fallback stack.
-
----
-
-## Key Features
-
-- **Responsive** — flexbox and grid layouts adapt to mobile, tablet, and desktop
-- **Shared components** — navbar and footer are styled once in `nav-footer.css` and reused across all pages
-- **Reservation logic** — cascading dropdowns built in vanilla JS; past dates are blocked automatically
-- **Catering form** — date auto-set to today, dietary checkboxes, and contact fields
-- **Accessible markup** — semantic HTML with `aria-label`, `role`, and `alt` attributes throughout
-
----
-
-
-## Known Limitations
-
-- Forms are front-end only — no backend or email handling yet
-- Location data in the reservation form is hardcoded (USA and Germany only)
-- Nav/footer HTML is duplicated across every page (no templating system)
-- No mobile hamburger menu
+## Acknowledgments
+- Special thanks to the developers and contributors who helped shape Yumverse!
